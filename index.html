@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ca" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Serenade, banc obert de biodiversitat de Catalunya: catàleg de tàxons, distribució territorial, fenologia i referències."
+    />
+    <meta name="theme-color" content="#c00000" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap"
+    />
+    <link rel="preconnect" href="https://api.inaturalist.org" />
+    <link rel="preconnect" href="https://inaturalist-open-data.s3.amazonaws.com" />
+    <link rel="preconnect" href="https://static.inaturalist.org" />
+    <title>Serenade · Banc obert de biodiversitat de Catalunya</title>
+    <script>
+      (() => {
+        try {
+          const stored = localStorage.getItem('serenade-theme');
+          const preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          document.documentElement.dataset.theme = stored || preferred;
+        } catch {
+          document.documentElement.dataset.theme = 'light';
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
